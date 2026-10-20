@@ -46,7 +46,7 @@ class HomePage extends StatelessWidget {
                     onTap: () => Navigator.pushNamed(context, route),
                     child: Center(
                       child: Image.asset(
-                        'images/profile.png',
+                        image,
                         width: 96,
                         height: 96,
                         fit: BoxFit.contain,

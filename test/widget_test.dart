@@ -31,6 +31,33 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
+  testWidgets('home displays each feature image',
+      (WidgetTester tester) async {
+    SharedPreferences.setMockInitialValues({'connecte': true});
+    await tester.pumpWidget(const MyApp());
+    await tester.pumpAndSettle();
+
+    final images = tester
+        .widgetList<Image>(find.byType(Image))
+        .map((image) => image.image)
+        .whereType<AssetImage>()
+        .map((image) => image.assetName)
+        .toSet();
+
+    expect(
+      images,
+      containsAll([
+        'images/meteo.png',
+        'images/maps.png',
+        'images/contacts.png',
+        'images/messenger.png',
+        'images/chatbot.png',
+        'images/parametres.png',
+      ]),
+    );
+    expect(tester.takeException(), isNull);
+  });
+
   testWidgets('new user starts on the inscription page',
       (WidgetTester tester) async {
     await tester.pumpWidget(const MyApp());
