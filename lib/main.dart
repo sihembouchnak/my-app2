@@ -9,6 +9,7 @@ import 'pages/inscription.page.dart';
 import 'pages/maps.page.dart';
 import 'pages/messenger.page.dart';
 import 'pages/meteo.page.dart';
+import 'pages/meteo-details.page.dart';
 import 'pages/parametres.page.dart';
 
 void main() {
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
     '/inscription': (context) => const InscriptionPage(),
     '/authentification': (context) => const AuthentificationPage(),
     '/meteo': (context) => const MeteoPage(),
+    '/meteo-details': (context) => const MeteoDetailsPage(ville: 'Tataouine'),
     '/maps': (context) => const MapsPage(),
     '/contact': (context) => const ContactPage(),
     '/messenger': (context) => const MessengerPage(),

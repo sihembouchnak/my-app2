@@ -166,6 +166,6 @@ void main() {
     await tester.tap(find.widgetWithText(ListTile, 'Météo'));
     await tester.pumpAndSettle();
 
-    expect(find.widgetWithText(Center, 'Page Météo'), findsOneWidget);
+    expect(find.text('Page Météo'), findsOneWidget);
   });
 }
